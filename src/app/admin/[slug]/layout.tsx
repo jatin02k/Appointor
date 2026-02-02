@@ -47,13 +47,13 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className="min-h-screen bg-black flex flex-col">
       {isTrial && (
-        <div className="bg-indigo-600 text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-2">
+        <div className="bg-rose-600 text-white px-4 py-2 text-center text-sm font-medium flex items-center justify-center gap-2">
             <Clock className="w-4 h-4" />
             <span>You are on the 14-day free trial. {Math.max(0, daysLeft)} days remaining.</span>
-            <Link href={`/app/${org.slug}/admin/dashboard/subscription`} className="underline hover:text-indigo-100">
-                Upgrade now to keep access
+            <Link href={`/app/${org.slug}/admin/dashboard/subscription`} className="underline hover:text-rose-100">
+                Upgrade now
             </Link>
         </div>
       )}

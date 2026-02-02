@@ -61,21 +61,21 @@ export default async function ServiceSelectionPage({ params }: ServicePageProps)
   ];
 
   return (
-    <div className="min-h-screen pt-20 pb-16 bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen pt-20 pb-16 bg-gradient-to-b from-bg-zinc-950 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-pink-100 rounded-full px-4 py-2 mb-4">
-            <span className="text-sm bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-900/20 to-amber-900/20 rounded-full px-4 py-2 mb-4 border border-rose-500/10">
+            <span className="text-sm bg-gradient-to-r from-rose-400 to-amber-400 bg-clip-text text-transparent font-medium">
               {org.name} Services {/* Personalized Header */}
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl text-black mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-5xl text-white mb-4 tracking-tight font-bold">
             Our{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-rose-500 to-amber-500 bg-clip-text text-transparent">
               Services
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
             Choose from the range of programs at {org.name}.
           </p>
         </div>
@@ -84,23 +84,23 @@ export default async function ServiceSelectionPage({ params }: ServicePageProps)
           {services.map((service, index) => (
             <Card
               key={service.id}
-              className={`overflow-hidden border-2 hover:border-transparent transition-all duration-300 hover:shadow-xl ${gradientClasses[index % gradientClasses.length].shadow} group`}
+              className={`overflow-hidden bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-rose-900/10 group`}
             >
               <CardHeader>
                 <div className="mb-2 relative overflow-hidden">
-                  <CardTitle className="text-xl text-black mb-1">
+                  <CardTitle className="text-xl text-white mb-1">
                     {service.name}
                   </CardTitle>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-slate-400">
                     <b>{service.duration_minutes} mins</b>
                   </div>
                   <div
-                  className={`absolute top-4 right-4 bg-gradient-to-r ${gradientClasses[index % gradientClasses.length].gradient} text-white px-3 py-1 rounded-full text-sm shadow-lg`}
+                  className={`absolute top-4 right-4 bg-gradient-to-r from-rose-600 to-amber-600 text-white px-3 py-1 rounded-full text-sm shadow-lg`}
                 >
                   ₹{service.price}/session
                 </div>
                 </div>
-                <CardDescription className="text-gray-600">
+                <CardDescription className="text-slate-400">
                   {service.description}
                 </CardDescription>
               </CardHeader>
@@ -111,10 +111,10 @@ export default async function ServiceSelectionPage({ params }: ServicePageProps)
                   {(typeof service.features === 'string' ? JSON.parse(service.features) : service.features)?.map((feature: string, idx: number) => (
                     <li
                       key={idx}
-                      className="flex items-center text-sm text-gray-600"
+                      className="flex items-center text-sm text-slate-300"
                     >
                       <div
-                        className={`p-0.5 rounded-full bg-gradient-to-r ${gradientClasses[index % gradientClasses.length].gradient} mr-3 flex-shrink-0`}
+                        className={`p-0.5 rounded-full bg-gradient-to-r from-rose-600 to-amber-600 mr-3 flex-shrink-0`}
                       >
                         <Check className="h-3 w-3 text-white" />
                       </div>
@@ -132,8 +132,8 @@ export default async function ServiceSelectionPage({ params }: ServicePageProps)
                 >
                   <Button
                     className={`
-                    w-full text-white bg-gradient-to-r ${gradientClasses[index % gradientClasses.length].gradient} 
-                    hover:shadow-lg ${gradientClasses[index % gradientClasses.length].shadow} transition-all duration-300 group-hover:scale-105
+                    w-full text-white bg-gradient-to-r from-rose-600 to-amber-600
+                    hover:shadow-lg hover:shadow-rose-900/20 transition-all duration-300 group-hover:scale-105
                   `}
                   >
                     Select {service.name}

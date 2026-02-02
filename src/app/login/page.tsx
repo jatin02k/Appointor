@@ -137,43 +137,43 @@ export default function AdminLoginPage() {
 
   if (isCheckingSession) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-        <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+      <div className="min-h-screen flex items-center justify-center bg-zinc-950 p-4">
+        <Loader2 className="h-8 w-8 animate-spin text-rose-500" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900 p-4">
-      <div className="absolute top-0 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl opacity-60 animate-pulse"></div>
-      <div className="absolute top-0 right-1/4 translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-3xl opacity-60 animate-pulse" style={{ animationDelay: "2s" }}></div>
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black p-4">
+      <div className="absolute top-0 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/20 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+      <div className="absolute top-0 right-1/4 translate-y-1/2 w-[500px] h-[500px] bg-amber-500/20 rounded-full blur-3xl opacity-60 animate-pulse" style={{ animationDelay: "2s" }}></div>
 
-      <Card className="w-full max-w-md shadow-2xl border-0 bg-white/95 backdrop-blur-sm relative z-10">
+      <Card className="w-full max-w-md shadow-2xl border-zinc-800 bg-zinc-900/95 backdrop-blur-sm relative z-10 border">
         <CardHeader className="text-center pb-2 pt-5 md:pt-8">
-          <Link href="/" className="absolute top-4 right-4 md:top-6 md:right-6 z-50 p-2 md:p-3 rounded-full bg-black backdrop-blur-md border border-white/10 text-white shadow-xl hover:bg-gray-500 hover:scale-110 transition-all duration-300 group">
-         <Home className="w-4 h-4 md:w-5 md:h-5 text-white/80 group-hover:text-blue-400" />
+          <Link href="/" className="absolute top-4 right-4 md:top-6 md:right-6 z-50 p-2 md:p-3 rounded-full bg-black/50 backdrop-blur-md border border-zinc-800 text-slate-400 shadow-xl hover:bg-zinc-800 hover:text-white hover:scale-110 transition-all duration-300 group">
+         <Home className="w-4 h-4 md:w-5 md:h-5" />
       </Link>
-           <div className="mx-auto mb-4 h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
+           <div className="mx-auto mb-4 h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-rose-500 to-amber-500 flex items-center justify-center shadow-lg shadow-rose-500/30">
               <LogIn className="w-5 h-5 md:w-6 md:h-6 text-white" />
            </div>
-          <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
+          <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight text-white">
             Welcome back
           </CardTitle>
-          <CardDescription className="text-sm md:text-base text-gray-500 mt-2">
+          <CardDescription className="text-sm md:text-base text-slate-400 mt-2">
             Sign in to manage your business
           </CardDescription>
         </CardHeader>
         <CardContent className="p-5 pt-4 md:p-8 md:pt-6">
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
             {error && (
-              <div className="p-3 md:p-4 bg-red-50 border border-red-100 text-red-700 rounded-xl text-sm flex items-center gap-2">
+              <div className="p-3 md:p-4 bg-red-950/20 border border-red-900/50 text-red-400 rounded-xl text-sm flex items-center gap-2">
                  <div className="h-2 w-2 rounded-full bg-red-500"></div>
                  {error}
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-gray-700 font-medium">Email Address</Label>
+              <Label htmlFor="email" className="text-slate-400 font-medium">Email Address</Label>
               <Input
                 id="email"
                 type="email"
@@ -181,14 +181,14 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="py-3 md:py-6 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                className="py-3 md:py-6 rounded-xl border-zinc-800 bg-zinc-950/50 text-white placeholder-zinc-600 focus:border-rose-500 focus:ring-rose-500"
               />
             </div>
 
             <div className="space-y-2">
              <div className="flex items-center justify-between">
-                <Label htmlFor="password" className="text-gray-700 font-medium">Password</Label>
-                <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-500">Forgot password?</a>
+                <Label htmlFor="password" className="text-slate-400 font-medium">Password</Label>
+                <a href="#" className="text-sm font-medium text-rose-500 hover:text-rose-400">Forgot password?</a>
              </div>
               <Input
                 id="password"
@@ -197,13 +197,13 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="py-3 md:py-6 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                className="py-3 md:py-6 rounded-xl border-zinc-800 bg-zinc-950/50 text-white placeholder-zinc-600 focus:border-rose-500 focus:ring-rose-500"
               />
             </div>
 
             <Button
               type="submit"
-              className="w-full py-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/25 transition-all duration-200 font-semibold text-lg"
+              className="w-full py-6 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 text-white shadow-lg shadow-rose-900/20 transition-all duration-200 font-semibold text-lg"
               disabled={isLoading}
             >
               {isLoading ? (
@@ -216,15 +216,15 @@ export default function AdminLoginPage() {
             </Button>
           </form>
           <div className="mt-8 text-center text-sm">
-            <span className="text-gray-500">Don&apos;t have an account? </span>
-            <Link href="/signup" className="font-semibold text-blue-600 hover:text-blue-500">
+            <span className="text-slate-500">Don&apos;t have an account? </span>
+            <Link href="/signup" className="font-semibold text-rose-500 hover:text-rose-400">
               Start your 14-day free trial
             </Link>
           </div>
         </CardContent>
       </Card>
       
-      <div className="absolute bottom-6 text-center text-white/40 text-xs z-10 p-2">
+      <div className="absolute bottom-6 text-center text-white/20 text-xs z-10 p-2">
          &copy; {new Date().getFullYear()} Appointor. All rights reserved.
       </div>
     </div>

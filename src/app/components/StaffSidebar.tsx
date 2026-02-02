@@ -29,7 +29,7 @@ export function StaffSidebar({ slug }: StaffSidebarProps) {
     },
     {
       href: `/app/${slug}/admin/dashboard/services`,
-      label: "Services & Hours",
+      label: "Sessions & Hours",
       icon: Users,
       gradient: "from-purple-500 to-blue-500",
     },
@@ -67,8 +67,8 @@ export function StaffSidebar({ slug }: StaffSidebarProps) {
 
   // Helper Content Component
   const SidebarContent = () => (
-    <div className="flex flex-col h-full bg-gradient-to-b from-gray-900 to-black border-r border-gray-800 text-white">
-      <div className="p-6 border-b border-gray-800 flex justify-between items-center">
+    <div className="flex flex-col h-full bg-zinc-950 border-r border-zinc-800 text-white">
+      <div className="p-6 border-b border-zinc-800 flex justify-between items-center">
         <div>
            <div className="flex items-center gap-2 mb-1">
              <h2 className="text-lg bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
@@ -100,7 +100,7 @@ export function StaffSidebar({ slug }: StaffSidebarProps) {
                 className={`w-full justify-start transition-all duration-300 group mb-1 ${
                   isActive
                     ? `bg-gradient-to-r ${item.gradient} text-white shadow-lg hover:shadow-xl hover:scale-105`
-                    : "text-gray-300 hover:bg-gray-800 hover:text-white"
+                    : "text-zinc-400 hover:bg-zinc-900 hover:text-white"
                 }`}
               >
                 <Icon
@@ -137,7 +137,7 @@ export function StaffSidebar({ slug }: StaffSidebarProps) {
   return (
     <>
       {/* Mobile Trigger Button (Visible only on mobile) */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-gray-900 border-b border-gray-800 p-4 flex items-center justify-between">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-zinc-950 border-b border-zinc-800 p-4 flex items-center justify-between">
          <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-orange-400" />
             <span className="text-white font-bold">Appointor Admin</span>

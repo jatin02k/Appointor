@@ -94,8 +94,8 @@ export function AvailabilitySelector({ serviceId, serviceName, slug }: Availabil
             <div className="flex flex-col xl:flex-row gap-12">
                 {/* Calendar Section */}
                 <div className="flex-shrink-0">
-                    <label className="block text-sm font-semibold text-slate-500 mb-4 uppercase tracking-wider">1. Choose Date</label>
-                    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm inline-block p-4">
+                    <label className="block text-sm font-semibold text-slate-400 mb-4 uppercase tracking-wider">1. Choose Date</label>
+                    <div className="bg-zinc-900 rounded-2xl border border-zinc-800 shadow-sm inline-block p-4">
                         <Calendar
                             mode="single"
                             selected={selectedDate}
@@ -109,9 +109,9 @@ export function AvailabilitySelector({ serviceId, serviceName, slug }: Availabil
                 {/* Time Slots Section */}
                 <div className="flex-1 min-w-[300px]">
                     <div className="flex items-center justify-between mb-4">
-                        <label className="block text-sm font-semibold text-slate-500 uppercase tracking-wider">2. Choose Time</label>
+                        <label className="block text-sm font-semibold text-slate-400 uppercase tracking-wider">2. Choose Time</label>
                         {selectedDate && (
-                            <span className="text-sm font-medium text-slate-900 bg-slate-100 px-3 py-1 rounded-full">
+                            <span className="text-sm font-medium text-white bg-zinc-800 px-3 py-1 rounded-full border border-zinc-700">
                                 {selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                             </span>
                         )}
@@ -119,7 +119,7 @@ export function AvailabilitySelector({ serviceId, serviceName, slug }: Availabil
                     
                     <div className="min-h-[300px]">
                         {!selectedDate ? (
-                            <div className="h-full flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-100 rounded-2xl bg-slate-50/50 p-8">
+                            <div className="h-full flex flex-col items-center justify-center text-slate-500 border-2 border-dashed border-zinc-800 rounded-2xl bg-zinc-900/30 p-8">
                                 <Clock className="w-8 h-8 mb-2 opacity-50" />
                                 <p>Please select a date first</p>
                             </div>
@@ -145,24 +145,24 @@ export function AvailabilitySelector({ serviceId, serviceName, slug }: Availabil
                                                 className={`
                                                     relative px-4 py-3 text-sm font-semibold rounded-xl transition-all duration-200 border
                                                     ${isSelected 
-                                                        ? 'bg-slate-900 text-white border-slate-900 shadow-lg shadow-slate-900/20 scale-[1.02]' 
-                                                        : 'bg-white text-slate-700 border-slate-200 hover:border-slate-400 hover:bg-slate-50'
+                                                        ? 'bg-rose-600 text-white border-rose-600 shadow-lg shadow-rose-900/20 scale-[1.02]' 
+                                                        : 'bg-zinc-900 text-slate-300 border-zinc-800 hover:border-zinc-600 hover:bg-zinc-800 hover:text-white'
                                                     }
                                                 `}
                                             >
                                                 {slot.time}
                                                 {isSelected && (
-                                                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full border-2 border-white"></div>
+                                                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-amber-500 rounded-full border-2 border-zinc-900"></div>
                                                 )}
                                             </button>
                                         ) : (
                                             <div
                                                 key={slot.time}
-                                                className="px-4 py-3 text-sm rounded-xl bg-slate-50 text-slate-300 border border-slate-100 cursor-not-allowed justify-center flex decoration-slate-300 relative overflow-hidden"
+                                                className="px-4 py-3 text-sm rounded-xl bg-zinc-900/50 text-zinc-600 border border-zinc-800 cursor-not-allowed justify-center flex decoration-zinc-600 relative overflow-hidden"
                                             >
                                                 <span className="relative z-10">{slot.time}</span>
                                                 <div className="absolute inset-0 flex items-center justify-center">
-                                                    <div className="w-full h-[1px] bg-slate-200 rotate-12"></div>
+                                                    <div className="w-full h-[1px] bg-zinc-700 rotate-12"></div>
                                                 </div>
                                             </div>
                                         );
@@ -176,15 +176,15 @@ export function AvailabilitySelector({ serviceId, serviceName, slug }: Availabil
 
             {/* Sticky/Fixed Summary Footer if date & time selected */}
             {selectedDate && selectedTime && (
-                <div className="mt-8 pt-8 border-t border-slate-100 animate-fade-in-up">
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                <div className="mt-8 pt-8 border-t border-zinc-800 animate-fade-in-up">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-zinc-900 rounded-2xl p-6 border border-zinc-800">
                          <div className="flex items-center gap-4">
-                             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                             <div className="w-12 h-12 bg-rose-500/20 text-rose-500 rounded-full flex items-center justify-center">
                                 <Check className="w-6 h-6" />
                              </div>
                              <div>
-                                 <p className="text-sm text-slate-500 font-medium uppercase tracking-wide">Excellent Choice</p>
-                                 <p className="text-slate-900 font-bold text-lg">
+                                 <p className="text-sm text-slate-400 font-medium uppercase tracking-wide">Excellent Choice</p>
+                                 <p className="text-white font-bold text-lg">
                                     {selectedDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} at {selectedTime}
                                  </p>
                              </div>
@@ -194,7 +194,7 @@ export function AvailabilitySelector({ serviceId, serviceName, slug }: Availabil
                             href={`/app/${slug}/checkout?serviceId=${serviceId}&date=${dateString}&time=${timeParam}`}
                             className="w-full sm:w-auto"
                         >
-                            <Button className="w-full sm:w-auto bg-slate-900 hover:bg-blue-600 text-white px-8 py-6 rounded-xl font-bold text-lg shadow-xl shadow-slate-900/10 transition-all hover:scale-105">
+                            <Button className="w-full sm:w-auto bg-rose-600 hover:bg-rose-500 text-white px-8 py-6 rounded-xl font-bold text-lg shadow-xl shadow-rose-900/20 transition-all hover:scale-105">
                                 Continue <ChevronRight className="ml-2 w-5 h-5" />
                             </Button>
                         </Link>

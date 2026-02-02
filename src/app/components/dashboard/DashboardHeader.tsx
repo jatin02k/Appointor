@@ -92,12 +92,12 @@ export function DashboardHeader({
     <header className="mb-8 w-full">
       <div className="w-full">
         {/* 1. Header with CTA */}
-        <div className="bg-white rounded-2xl p-3 md:p-6 shadow-sm border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 overflow-hidden">
+        <div className="bg-zinc-900 rounded-2xl p-3 md:p-6 shadow-sm border border-zinc-800 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 overflow-hidden">
           <div>
-            <h1 className="text-xl md:text-2xl font-bold text-slate-900">
+            <h1 className="text-xl md:text-2xl font-bold text-white">
               Welcome to {org.name}
             </h1>
-            <p className="text-slate-500 mt-1">
+            <p className="text-slate-400 mt-1">
               Your booking page is live! Share your link to get real bookings.
             </p>
           </div>
@@ -107,13 +107,13 @@ export function DashboardHeader({
                 href={`/app/${org.slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center gap-2 whitespace-nowrap"
+                className="text-sm font-medium text-blue-400 hover:text-blue-300 flex items-center gap-2 whitespace-nowrap"
               >
                 <ExternalLink className="w-4 h-4" />
                 Open Public Page
               </Link>
-            <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg p-1 pr-2 sm:pr-4 w-full sm:w-auto overflow-hidden">
-              <div className="bg-white px-3 py-1.5 text-xs text-slate-500 font-mono rounded border border-slate-100 select-all truncate flex-1 sm:flex-none">
+            <div className="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded-lg p-1 pr-2 sm:pr-4 w-full sm:w-auto overflow-hidden">
+              <div className="bg-zinc-900 px-3 py-1.5 text-xs text-slate-400 font-mono rounded border border-zinc-800 select-all truncate flex-1 sm:flex-none">
                 {prettyUrl}
               </div>
               <Button
@@ -138,12 +138,12 @@ export function DashboardHeader({
 
         {/* 2. Value-Driven Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="border-l-4 border-green-500 shadow-sm">
+          <Card className="border-l-4 border-green-500 shadow-sm bg-zinc-900 border-t-0 border-r-0 border-b-0">
             <CardContent className="p-3 md:p-6">
-              <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">
+              <p className="text-sm font-medium text-slate-400 uppercase tracking-wide">
                 Time Saved
               </p>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mt-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mt-2">
                 {timeSavedMinutes === 0
                   ? "0 Minutes"
                   : timeSavedMinutes >= 60
@@ -157,12 +157,12 @@ export function DashboardHeader({
               </p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-blue-500 shadow-sm">
+          <Card className="border-l-4 border-blue-500 shadow-sm bg-zinc-900 border-t-0 border-r-0 border-b-0">
             <CardContent className="p-3 md:p-6">
-              <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">
+              <p className="text-sm font-medium text-slate-400 uppercase tracking-wide">
                 Revenue Collected
               </p>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mt-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mt-2">
                 ₹{revenueCollected.toLocaleString()}
               </h3>
               <p className="text-xs text-blue-600 mt-1 font-medium">
@@ -175,21 +175,21 @@ export function DashboardHeader({
           
           {/* Onboarding Checklist - Minimizes when complete */}
           {allComplete && !isExpanded ? (
-             <Card className="border-l-4 border-emerald-500 shadow-sm bg-emerald-50/50">
+             <Card className="border-l-4 border-emerald-500 shadow-sm bg-emerald-950/20 border-t-0 border-r-0 border-b-0">
                 <CardContent className="p-3 md:p-6 flex items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                    <div className="w-10 h-10 bg-emerald-900/50 rounded-full flex items-center justify-center text-emerald-500">
                       <Check className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-bold text-emerald-900">You&apos;re all set!</p>
-                      <p className="text-xs text-emerald-700">Onboarding complete.</p>
+                      <p className="font-bold text-emerald-400">You&apos;re all set!</p>
+                      <p className="text-xs text-emerald-600">Onboarding complete.</p>
                     </div>
                   </div>
                   <Button 
                     variant="ghost" 
                     size="sm" 
-                    className="text-emerald-700 hover:text-emerald-800 hover:bg-emerald-100"
+                    className="text-emerald-500 hover:text-emerald-400 hover:bg-emerald-900/30"
                     onClick={() => setIsExpanded(true)}
                   >
                     View Checklist
@@ -197,10 +197,10 @@ export function DashboardHeader({
                 </CardContent>
              </Card>
           ) : (
-            <Card className={`border-l-4 shadow-sm ${allComplete ? "border-emerald-500 bg-emerald-50/50" : "border-purple-500 bg-purple-50/50"}`}>
+            <Card className={`border-l-4 shadow-sm border-t-0 border-r-0 border-b-0 ${allComplete ? "border-emerald-500 bg-emerald-950/20" : "border-purple-500 bg-purple-950/20"}`}>
                 <CardContent className="p-3 md:p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <p className="text-sm font-medium text-slate-900 font-bold">
+                  <p className="text-sm font-medium text-white font-bold">
                       Onboarding Checklist
                   </p>
                   {allComplete && (
@@ -216,7 +216,7 @@ export function DashboardHeader({
                 </div>
                 <div className="space-y-2">
                     <ChecklistItem label="Booking page created" checked={true} />
-                    <ChecklistItem label="Edit your services" checked={isServicesEdited} />
+                    <ChecklistItem label="Edit your sessions" checked={isServicesEdited} />
                     <ChecklistItem label="Share link with clients" checked={isLinkShared} />
                 </div>
                 </CardContent>

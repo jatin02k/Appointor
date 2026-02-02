@@ -58,41 +58,41 @@ export default async function CheckoutPage({
 
 
   return (
-    <div className="min-h-screen pt-20 pb-16 bg-gray-50">
+    <div className="min-h-screen pt-20 pb-16 bg-zinc-950">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <Link href={`/app/${slug}/book/${serviceId}`}>
             <Button
               variant="outline"
-              className="mb-4 border-black text-black hover:bg-black hover:text-white"
+              className="mb-4 border-zinc-700 bg-black text-slate-300 hover:bg-zinc-800 hover:text-white hover:border-zinc-500 transition-colors"
             >
               ← Back to Time Selection
             </Button>
           </Link>
 
-          <h1 className="text-3xl md:text-4xl text-black mb-2 tracking-tight">
+          <h1 className="text-3xl md:text-4xl text-white mb-2 tracking-tight">
             Complete Your Booking
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-slate-400">
             Just a few details and you are all set!
           </p>
         </div>
 
         <div className="space-y-8">
           {/* Booking Summary */}
-          <Card>
+          <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader>
-              <CardTitle className="text-black">Booking Summary</CardTitle>
+              <CardTitle className="text-white">Booking Summary</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Service:</span>
-                  <span className="text-black">{serviceData.name}</span>
+                  <span className="text-slate-400">Service:</span>
+                  <span className="text-white font-medium">{serviceData.name}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Date:</span>
-                  <span className="text-black">
+                  <span className="text-slate-400">Date:</span>
+                  <span className="text-white font-medium">
                     {(() => {
                       const dateObj = bookingDate
                         ? new Date(bookingDate)
@@ -109,12 +109,12 @@ export default async function CheckoutPage({
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Time:</span>
-                  <span className="text-black">{bookingTime}</span>
+                  <span className="text-slate-400">Time:</span>
+                  <span className="text-white font-medium">{bookingTime}</span>
                 </div>
-                <div className="flex justify-between border-t pt-3">
-                  <span className="text-black">Total:</span>
-                  <span className="text-xl text-black">
+                <div className="flex justify-between border-t border-zinc-800 pt-3">
+                  <span className="text-white font-bold">Total:</span>
+                  <span className="text-xl text-rose-500 font-bold">
                     ₹{serviceData.price}
                   </span>
                 </div>

@@ -13,9 +13,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Appointor | Automate Booking for Coaches & Consultants',
-  description: 'Stop managing appointments manually. The simple booking system for founders, indie devs, coaches, consultants, and freelancers. 14-day free trial.',
-  keywords: ['booking software', 'appointment scheduling', 'booking system for coaches', 'scheduling software for consultants', 'indie dev tools', 'founder productivity', 'client booking', 'appointment booking for therapists'],
+  title: 'Appointor | Tattoo Studio Management & Salon Booking Software',
+  description: 'Eliminate no-shows with automated deposits. The premier management platform for Tattoo Artists and Luxury Salon Studios to manage bookings & payments.',
+  keywords: ['tattoo studio management software', 'salon booking app', 'tattoo artist booking system', 'deposit collection for artists', 'automated appointment reminders tattoo'],
 };
 
 export default function RootLayout({

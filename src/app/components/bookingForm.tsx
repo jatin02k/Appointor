@@ -215,15 +215,16 @@ function BookingFormContent({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Card>
+      <Card className="bg-zinc-900 border-zinc-800">
         <CardHeader>
-          <CardTitle>Contact Information</CardTitle>
+          <CardTitle className="text-white">Contact Information</CardTitle>
         </CardHeader>
 
         <CardContent className="space-y-4">
           <div>
-            <Label>Full Name</Label>
+            <Label className="text-slate-400">Full Name</Label>
             <Input
+              className="bg-zinc-950 border-zinc-800 text-white focus:border-rose-500"
               value={formData.name}
               onChange={(e) =>
                 handleInputChange("name", e.target.value)
@@ -235,8 +236,9 @@ function BookingFormContent({
           </div>
 
           <div>
-            <Label>Email</Label>
+            <Label className="text-slate-400">Email</Label>
             <Input
+              className="bg-zinc-950 border-zinc-800 text-white focus:border-rose-500"
               type="email"
               value={formData.email}
               onChange={(e) =>
@@ -249,8 +251,9 @@ function BookingFormContent({
           </div>
 
           <div>
-            <Label>Phone Number</Label>
+            <Label className="text-slate-400">Phone Number</Label>
             <Input
+              className="bg-zinc-950 border-zinc-800 text-white focus:border-rose-500"
               type="tel"
               value={formData.phoneNo}
               onChange={(e) =>
@@ -266,7 +269,7 @@ function BookingFormContent({
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-black text-white py-6 text-lg hover:bg-gray-800"
+        className="w-full bg-rose-600 text-white py-6 text-lg hover:bg-rose-700 shadow-lg shadow-rose-900/20"
       >
         {isSubmitting ? (
           <>

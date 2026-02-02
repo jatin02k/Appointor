@@ -12,28 +12,28 @@ export function LandingHeader() {
   };
 
   return (
-      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+      <header className="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="bg-blue-600 rounded-lg p-1.5">
+            <div className="bg-rose-600 rounded-lg p-1.5">
                <span className="font-bold text-white text-lg tracking-tight">Ap</span>
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900">Appointor</span>
+            <span className="font-bold text-xl tracking-tight text-white">Appointor</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8">
-            <nav className="flex gap-6 text-sm font-medium text-slate-600">
-              <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
-              <a href="#how-it-works" className="hover:text-blue-600 transition-colors">How it Works</a>
-              <a href="#pricing" className="hover:text-blue-600 transition-colors">Pricing</a>
-              <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
+            <nav className="flex gap-6 text-sm font-medium text-slate-400">
+              <a href="#features" className="hover:text-rose-500 transition-colors">Features</a>
+              <a href="#how-it-works" className="hover:text-rose-500 transition-colors">How it Works</a>
+              <a href="#pricing" className="hover:text-rose-500 transition-colors">Pricing</a>
+              <a href="#faq" className="hover:text-rose-500 transition-colors">FAQ</a>
             </nav>
             <div className="flex items-center gap-4">
-              <Link href="/login" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">
+              <Link href="/login" className="text-sm font-semibold text-slate-400 hover:text-rose-500 transition-colors">
                 Log in
               </Link>
               <Link href="/signup">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:translate-y-px">
+                <button className="bg-white hover:bg-zinc-200 text-zinc-950 px-5 py-2 rounded-full text-sm font-bold transition-all hover:shadow-lg hover:shadow-white/10 hover:translate-y-px">
                   Start Free Trial
                 </button>
               </Link>
@@ -43,7 +43,7 @@ export function LandingHeader() {
           <div className="md:hidden">
              {/* Mobile Menu Button */}
              <button 
-               className="p-2 text-slate-600 hover:text-slate-900 transition-colors"
+               className="p-2 text-slate-400 hover:text-white transition-colors"
                onClick={toggleMobileMenu}
              >
                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

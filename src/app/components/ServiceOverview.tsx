@@ -281,7 +281,7 @@ export default function ServiceOverview({
                   </div>
 
                   <div>
-                    <Label htmlFor="new-duration">Duration</Label>
+                    <Label htmlFor="new-duration">Chair Time</Label>
                     <Input
                       id="new-duration"
                       value={newDuration}
@@ -409,7 +409,7 @@ export default function ServiceOverview({
                               </div>
 
                               <div>
-                                <Label htmlFor="edit-duration">Duration</Label>
+                                <Label htmlFor="edit-duration">Chair Time</Label>
                                 <Input
                                   id="edit-duration"
                                   value={editDuration}

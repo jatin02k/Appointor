@@ -11,9 +11,9 @@ export function LandingFooter() {
           <div>
             <div className="flex items-center gap-2 mb-4">
                 <Link href="/" className="cursor-pointer">
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent inline-flex items-center gap-2">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-rose-400 to-amber-400 bg-clip-text text-transparent inline-flex items-center gap-2">
                     Appointor
-                    <Sparkles className="h-4 w-4 text-blue-400" />
+                    <Sparkles className="h-4 w-4 text-rose-400" />
                   </h2>
                 </Link>
             </div>
@@ -22,17 +22,17 @@ export function LandingFooter() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 text-sm text-gray-400">
+          <div className="flex flex-col gap-4 text-sm text-zinc-400">
             <div className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-blue-400" />
+                <Mail className="h-4 w-4 text-rose-400" />
                 <span>jatin02kr@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-indigo-400" />
+                <Phone className="h-4 w-4 text-amber-400" />
                 <span>+91 9650584722</span>
             </div>
             <div className="flex items-center gap-3">
-                <Clock className="h-4 w-4 text-violet-400" />
+                <Clock className="h-4 w-4 text-orange-400" />
                 <span>Mon-Fri, 9am - 6pm IST</span>
             </div>
           </div>

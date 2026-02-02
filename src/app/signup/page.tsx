@@ -130,9 +130,9 @@ export default function SignupPage() {
       // 4. SEED DATA: Services
       console.log("Seeding Services...");
       const { data: services, error: servicesError } = await supabase.from("services").insert([
-        { organization_id: newOrg.id, name: "Consultation Call", duration_minutes: 30, price: 50, description: "1-on-1 strategy session" },
-        { organization_id: newOrg.id, name: "Code Review", duration_minutes: 60, price: 150, description: "Deep dive into your codebase" },
-        { organization_id: newOrg.id, name: "Project Scope", duration_minutes: 45, price: 100, description: "Defining requirements and roadmap" },
+        { organization_id: newOrg.id, name: "Flash Tattoo Session", duration_minutes: 60, price: 150, description: "Pre-designed flash piece" },
+        { organization_id: newOrg.id, name: "Custom Piece Consult", duration_minutes: 30, price: 50, description: "Discuss your custom design ideas" },
+        { organization_id: newOrg.id, name: "Touch-up Session", duration_minutes: 45, price: 0, description: "Free touch-up for past work" },
       ]).select();
 
       if (servicesError) console.error("Error seeding services:", servicesError);
@@ -208,13 +208,13 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex bg-white relative">
-      <Link href="/" className="absolute top-6 right-6 z-50 p-2.5 rounded-full shadow-lg hover:scale-110 transition-all duration-300 lg:bg-black lg:text-white lg:border-gray-200 lg:backdrop-blur-md border border-gray-200 bg-white text-gray-700 lg:border-transparent lg:hover:bg-white/20 group">
-          <Home className="w-5 h-5 group-hover:text-orange-500 lg:group-hover:text-red transition-colors" />
+    <div className="min-h-screen flex bg-zinc-950 relative">
+      <Link href="/" className="absolute top-6 right-6 z-50 p-2.5 rounded-full shadow-lg hover:scale-110 transition-all duration-300 lg:bg-black/50 lg:text-white lg:border-zinc-800 lg:backdrop-blur-md border border-zinc-800 bg-zinc-900 text-slate-400 lg:border-transparent lg:hover:bg-zinc-800 group">
+          <Home className="w-5 h-5 group-hover:text-rose-500 lg:group-hover:text-rose-400 transition-colors" />
       </Link>
 
       {/* BRAND PANEL (LEFT) */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gray-900 relative overflow-hidden flex-col justify-between p-12 text-white">
+      <div className="hidden lg:flex lg:w-1/2 bg-zinc-900 relative overflow-hidden flex-col justify-between p-12 text-white border-r border-zinc-800">
         <div className="relative z-10">
           <Link href="/" className="flex items-center gap-2 mb-8">
              <Image src="/logo.png" alt="Appointor" width={24} height={24} className="object-contain" />
@@ -222,34 +222,34 @@ export default function SignupPage() {
           </Link>
           <h1 className="text-5xl font-extrabold tracking-tight mb-6 leading-tight">
             The OS for <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-              Indie Founders & Consultants
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-500">
+              Tattoo Artists & Creative Studios
             </span>
           </h1>
-          <p className="text-lg text-gray-400 max-w-md">
-             Join thousands of founders who trust Appointor to automate strategy calls and payments.
+          <p className="text-lg text-slate-400 max-w-md">
+             Join thousands of artists who trust Appointor to automate strategy calls and payments.
           </p>
         </div>
 
         {/* Decorative Circles */}
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-rose-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-amber-900/10 rounded-full blur-3xl"></div>
 
         {/* Testimonial / Footer */}
         <div className="relative z-10">
            <blockquote className="space-y-2">
-              <p className="text-lg font-medium">
-                &ldquo;Appointor transformed how I run my consultancy. The booking experience is seamless for my clients.&rdquo;
+              <p className="text-lg font-medium text-slate-200">
+                &ldquo;Appointor transformed how I run my studio. The booking experience is seamless for my clients.&rdquo;
               </p>
-              <footer className="text-sm text-gray-500">
-                — Sarah Jenkins, Product Coach
+              <footer className="text-sm text-slate-500">
+                — Alex Rivera, Tattoo Artist
               </footer>
            </blockquote>
         </div>
       </div>
 
       {/* FORM SIDER (RIGHT) - COMPACT LAYOUT */}
-      <div className="flex-1 flex flex-col justify-center py-6 px-3 sm:px-6 lg:px-20 xl:px-24 bg-gray-50 h-screen overflow-y-auto">
+      <div className="flex-1 flex flex-col justify-center py-6 px-3 sm:px-6 lg:px-20 xl:px-24 bg-black h-screen overflow-y-auto">
         <div className="mx-auto w-full max-w-lg lg:max-w-2xl">
           <div className="lg:hidden mb-4 text-center">
              <Link href="/" className="inline-flex items-center gap-2">
@@ -258,12 +258,12 @@ export default function SignupPage() {
           </div>
 
           <div className="mb-6 text-center lg:text-left">
-            <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-gray-900">
+            <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-white/90">
               Create your account
             </h2>
-            <p className="mt-1 text-sm text-gray-600">
+            <p className="mt-1 text-sm text-slate-400">
               Start your 14-day free trial. {" "}
-              <Link href="/admin/login" className="font-medium text-blue-600 hover:text-blue-500">
+              <Link href="/login" className="font-medium text-rose-500 hover:text-rose-400">
                 Already have an account?
               </Link>
             </p>
@@ -271,43 +271,43 @@ export default function SignupPage() {
 
           <form className="space-y-3 md:space-y-4" onSubmit={handleSignup}>
             {/* Personal Details */}
-            <div className="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-100 space-y-3 md:space-y-4">
+            <div className="bg-zinc-900 p-4 md:p-5 rounded-2xl shadow-sm border border-zinc-800 space-y-3 md:space-y-4">
                 
                 <div className="grid grid-cols-1 gap-3 md:gap-4">
                     <div>
-                       <Label htmlFor="name" className="text-gray-700 text-xs uppercase font-semibold">Full Name</Label>
+                       <Label htmlFor="name" className="text-slate-400 text-xs uppercase font-semibold">Full Name</Label>
                        <Input
                           id="name"
                           name="name"
                           type="text"
                           required
-                          className="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50/50 py-2 md:py-2"
+                          className="mt-1 block w-full rounded-lg border-zinc-700 shadow-sm focus:border-rose-500 focus:ring-rose-500 bg-zinc-950/50 py-2 md:py-2 text-white placeholder-zinc-600"
                           placeholder="John Doe"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                        />
                     </div>
                     <div>
-                       <Label htmlFor="email" className="text-gray-700 text-xs uppercase font-semibold">Email</Label>
+                       <Label htmlFor="email" className="text-slate-400 text-xs uppercase font-semibold">Email</Label>
                        <Input
                           id="email"
                           name="email"
                           type="email"
                           required
-                          className="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50/50 py-2 md:py-2"
+                          className="mt-1 block w-full rounded-lg border-zinc-700 shadow-sm focus:border-rose-500 focus:ring-rose-500 bg-zinc-950/50 py-2 md:py-2 text-white placeholder-zinc-600"
                           placeholder="john@example.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                        />
                     </div>
                      <div>
-                       <Label htmlFor="password" className="text-gray-700 text-xs uppercase font-semibold">Password</Label>
+                       <Label htmlFor="password" className="text-slate-400 text-xs uppercase font-semibold">Password</Label>
                        <Input
                           id="password"
                           name="password"
                           type="password"
                           required
-                          className="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50/50 py-2 md:py-2"
+                          className="mt-1 block w-full rounded-lg border-zinc-700 shadow-sm focus:border-rose-500 focus:ring-rose-500 bg-zinc-950/50 py-2 md:py-2 text-white placeholder-zinc-600"
                           placeholder="••••••••"
                           value={formData.password}
                           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -317,38 +317,38 @@ export default function SignupPage() {
             </div>
 
             {/* Clinic Details */}
-            <div className="bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-100 space-y-3 md:space-y-4">
+            <div className="bg-zinc-900 p-4 md:p-5 rounded-2xl shadow-sm border border-zinc-800 space-y-3 md:space-y-4">
                 <div className="grid grid-cols-1 gap-3 md:gap-4">
                      <div>
-                       <Label htmlFor="orgName" className="text-gray-700 text-xs uppercase font-semibold">Business / Brand Name</Label>
+                       <Label htmlFor="orgName" className="text-slate-400 text-xs uppercase font-semibold">Business / Brand Name</Label>
                        <Input
                           id="orgName"
                           name="orgName"
                           type="text"
                           required
-                          className="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50/50 py-2 md:py-2"
+                          className="mt-1 block w-full rounded-lg border-zinc-700 shadow-sm focus:border-rose-500 focus:ring-rose-500 bg-zinc-950/50 py-2 md:py-2 text-white placeholder-zinc-600"
                           placeholder="Acme Consulting"
                           value={formData.orgName}
                           onChange={handleOrgNameChange}
                        />
                     </div>
                      <div>
-                       <Label htmlFor="orgPhone" className="text-gray-700 text-xs uppercase font-semibold">Phone (Optional)</Label>
+                       <Label htmlFor="orgPhone" className="text-slate-400 text-xs uppercase font-semibold">Phone (Optional)</Label>
                        <Input
                           id="orgPhone"
                           name="orgPhone"
                           type="tel"
                           required
-                          className="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50/50 py-2 md:py-2"
+                          className="mt-1 block w-full rounded-lg border-zinc-700 shadow-sm focus:border-rose-500 focus:ring-rose-500 bg-zinc-950/50 py-2 md:py-2 text-white placeholder-zinc-600"
                           placeholder="+1 555 000 0000"
                           value={formData.orgPhone}
                           onChange={(e) => setFormData({ ...formData, orgPhone: e.target.value })}
                        />
                     </div>
                      <div>
-                       <Label htmlFor="orgSlug" className="text-gray-700 text-xs uppercase font-semibold">Booking URL</Label>
+                       <Label htmlFor="orgSlug" className="text-slate-400 text-xs uppercase font-semibold">Booking URL</Label>
                        <div className="flex rounded-md shadow-sm mt-1">
-                          <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-200 bg-gray-50 text-gray-500 text-sm">
+                          <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-zinc-700 bg-zinc-800 text-slate-400 text-sm">
                             /app/
                           </span>
                           <Input
@@ -356,7 +356,7 @@ export default function SignupPage() {
                             name="orgSlug"
                             type="text"
                             required
-                            className="block w-full rounded-none rounded-r-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 bg-gray-50/50 py-2 md:py-2"
+                            className="block w-full rounded-none rounded-r-lg border-zinc-700 focus:border-rose-500 focus:ring-rose-500 bg-zinc-950/50 py-2 md:py-2 text-white placeholder-zinc-600"
                             placeholder="acme-consulting"
                             value={formData.orgSlug}
                             onChange={(e) => setFormData({ ...formData, orgSlug: e.target.value })}
@@ -378,15 +378,14 @@ export default function SignupPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-lg shadow-blue-500/20 text-sm font-bold tracking-wide text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 transform hover:scale-[1.02]"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-lg shadow-rose-900/20 text-sm font-bold tracking-wide text-white bg-white/10 hover:bg-white/20 border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 transition-all duration-200 transform hover:scale-[1.02]"
             >
               {isLoading ? "Creating Account..." : "Create Account"}
             </Button>
           </form>
-           
-           <p className="mt-4 text-center text-xs text-gray-400">
-              By joining, you agree to our <a href="#" className="underline hover:text-gray-600">Terms</a>.
-           </p>
+                      <p className="mt-4 text-center text-xs text-zinc-500">
+               By joining, you agree to our <a href="#" className="underline hover:text-zinc-300">Terms</a>.
+            </p>
         </div>
       </div>
     </div>
